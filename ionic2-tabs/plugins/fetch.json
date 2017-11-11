@@ -1,0 +1,10 @@
+{
+    "com.applozic.phonegap": {
+        "source": {
+            "type": "local",
+            "path": "C:\\Users\\Mihir\\Projects\\ionic\\applozic-chat\\applozic-chat\\plugins\\com.applozic.phonegap"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
