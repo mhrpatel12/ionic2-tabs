@@ -269,7 +269,33 @@ public class ApplozicCordovaPlugin extends CordovaPlugin {
                 UserService.getInstance(context).processUser(userDetail);
             }
             callback.success(response);
-        } else if (action.equals("processPushNotification")) {
+        }
+		
+		
+		
+		 else if (action.equals("isContactExists")) {
+            String cocontactID = data.getString(0);
+            AppContactService appContactService = new AppContactService(context);
+            callback.success(String.valueOf(appContactService.isContactExists(contactID)));
+        }
+		 else if (action.equals("deleteContactById")) {
+            String cocontactID = data.getString(0);
+            appContactService.deleteContactById(contact);
+            callback.success(response);
+        }
+		else if (action.equals("getAllContactListExcludingLoggedInUser")) {
+            String contactJson = data.getString(0);
+            Gson gson = new GsonBuilder().setExclusionStrategies(new AnnotationExclusionStrategy()).create();
+            UserDetail[] userDetails = (UserDetail[]) gson.fromJson(contactJson, UserDetail[].class);
+            for (UserDetail userDetail: userDetails) {
+                UserService.getInstance(context).processUser(userDetail);
+            }
+            callback.success(response);
+        }
+		
+		
+		
+		else if (action.equals("processPushNotification")) {
             Map<String, String> pushData = new HashMap<String, String>();
             //convert data to pushData
             System.out.println(data);
