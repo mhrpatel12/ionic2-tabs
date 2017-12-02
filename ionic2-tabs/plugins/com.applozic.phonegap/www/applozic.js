@@ -55,15 +55,24 @@ module.exports = {
     removeContact: function(contact, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "removeContact", [JSON.stringify(contact)]);
     },
-	    deleteContactById: function(userId, successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "deleteContactById", [userId]);
-    },
-	 isContactExists: function(userId, successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "isContactExists", [userId]);
-    },
     addContacts: function(contacts, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "addContacts", [JSON.stringify(contacts)]);
     },
+	
+	
+	
+	getAllContactListExcludingLoggedInUser: function(contacts, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "getAllContactListExcludingLoggedInUser", []);
+    },
+	deleteContactById: function(userId, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "deleteContactById", [userId]);
+    },
+	isContactExists: function(userId, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "isContactExists", [userId]);
+    },
+	
+	
+	
     processPushNotification: function(data, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "processPushNotification", [JSON.stringify(data)]);
     },
