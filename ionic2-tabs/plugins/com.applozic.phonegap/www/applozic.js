@@ -61,6 +61,7 @@ module.exports = {
 	
 	
 	
+	
 	getAllContactListExcludingLoggedInUser: function(contacts, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "getAllContactListExcludingLoggedInUser", []);
     },
@@ -70,6 +71,7 @@ module.exports = {
 	isContactExists: function(userId, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "ApplozicCordovaPlugin", "isContactExists", [userId]);
     },
+	
 	
 	
 	
