@@ -273,13 +273,14 @@ public class ApplozicCordovaPlugin extends CordovaPlugin {
 		
 		
 		
-		 else if (action.equals("isContactExists")) {
+		else if (action.equals("isContactExists")) {
             String cocontactID = data.getString(0);
             AppContactService appContactService = new AppContactService(context);
             callback.success(String.valueOf(appContactService.isContactExists(contactID)));
         }
-		 else if (action.equals("deleteContactById")) {
+		else if (action.equals("deleteContactById")) {
             String cocontactID = data.getString(0);
+			AppContactService appContactService = new AppContactService(context);
             appContactService.deleteContactById(contact);
             callback.success(response);
         }
