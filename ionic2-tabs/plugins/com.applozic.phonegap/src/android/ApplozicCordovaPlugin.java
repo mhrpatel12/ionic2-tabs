@@ -295,6 +295,7 @@ public class ApplozicCordovaPlugin extends CordovaPlugin {
         }
 		
 		
+	    
 		
 		else if (action.equals("processPushNotification")) {
             Map<String, String> pushData = new HashMap<String, String>();
